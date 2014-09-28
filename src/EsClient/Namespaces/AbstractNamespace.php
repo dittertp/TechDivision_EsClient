@@ -1,8 +1,22 @@
 <?php
+
 /**
- * User: zach
- * Date: 5/9/13
- * Time: 5:10 PM
+ * EsClient\Namespaces\AbstractNamespace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * PHP version 5
+ *
+ * @category  EsClient
+ * @package   TechDivision_EsClient
+ * @author    Philipp Dittert <pd@techdivision.com>
+ * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      http://www.appserver.io
  */
 
 namespace EsClient\Namespaces;
@@ -11,14 +25,16 @@ use Elasticsearch\Common\Exceptions\UnexpectedValueException;
 use Puzzle\Client;
 
 /**
- * Class AbstractNamespace
+ * class AbstractNamespace
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\AbstractNamespace
- * @author   Zachary Tong <zachary.tong@elasticsearch.com>
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
- * @link     http://elasticsearch.org
+ * @category  EsClient
+ * @package   TechDivision_EsClient
+ * @author    Philipp Dittert <pd@techdivision.com>
+ * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      http://www.appserver.io
  */
+
 abstract class AbstractNamespace
 {
     /** @var Puzzle\Client  */
@@ -35,8 +51,10 @@ abstract class AbstractNamespace
     }
 
     /**
-     * @param array $params
-     * @param string $arg
+     * extracts given argument from array
+     *
+     * @param array  &$params parameters
+     * @param string $arg     argument key
      *
      * @return null|mixed
      */
@@ -55,9 +73,13 @@ abstract class AbstractNamespace
         }
     }
 
+    /**
+     * Returns transport class instance
+     *
+     * @return Puzzle\Client
+     */
     protected function getTransport()
     {
         return $this->transport;
     }
-
 }
