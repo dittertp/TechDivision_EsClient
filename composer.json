@@ -1,0 +1,22 @@
+{
+    "name": "dittertp/EsClient",
+    "description": "PHP Client for Elasticsearch",
+    "keywords": ["search","client", "elasticsearch"],
+    "type": "library",
+    "license": "Apache 2",
+    "authors": [
+        {
+            "name": "Philipp Dittert"
+        }
+    ],
+    "require": {
+        "elasticsearch/elasticsearch" : "*",
+        "dittertp/puzzle" : "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "EsClient": "src/"
+        }
+    }
+}
