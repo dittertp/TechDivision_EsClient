@@ -2,13 +2,18 @@
 
 namespace EsClient;
 
+use EsClient\Namespaces\IndicesNamespace;
+
 class Client
 {
     protected $transport;
 
-    public function injectTransport($transport)
+    protected $indicesNamespace;
+
+    public function construct($transport)
     {
         $this->transport = $transport;
+        $this->indicesNamespace = new IndicesNamespace($transport);
     }
 
     public function index($params)
@@ -104,6 +109,11 @@ class Client
         } else {
             return null;
         }
+    }
+
+    public function indices()
+    {
+        return $this->indicesNamespace;
     }
 
 }
