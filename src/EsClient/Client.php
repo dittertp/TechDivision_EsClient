@@ -10,7 +10,7 @@ class Client
 
     protected $indicesNamespace;
 
-    public function construct($transport)
+    public function __construct($transport)
     {
         $this->transport = $transport;
         $this->indicesNamespace = new IndicesNamespace($transport);
