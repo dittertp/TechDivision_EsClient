@@ -12,7 +12,7 @@ class EndpointFactory {
     {
         $class = self::ELASTICSEARCH_NAMESPACE . "\\" . $className;
         if (class_exists($class)) {
-            return new $className($transportClass);
+            return new $class($transportClass);
         }
     }
 } 
