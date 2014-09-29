@@ -37,7 +37,7 @@ class EndpointFactory
     /**
      * @var string
      */
-    const ELASTICSEARCH_NAMESPACE = "Elasticsearch\Endpoints";
+    const ELASTICSEARCH_NAMESPACE = "\\Elasticsearch\\Endpoints";
 
     /**
      * Creates a new instance of given class name
