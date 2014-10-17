@@ -56,15 +56,19 @@ class IndicesNamespace extends AbstractNamespace
 
         try {
             $response = $endpoint->performRequest();
-        } catch (Missing404Exception $exception) {
-            return false;
-        }
 
+            if ($response['status'] === 200) {
+                return true;
+            } else {
+                return false;
+            }
 
-        if ($response['status'] === 200) {
-            return true;
-        } else {
-            return false;
+        } catch (\Exception $exception) {
+            if ($exception->getCode() == 404) {
+                return false;
+            } else {
+                throw new $exception;
+            }
         }
     }
 
